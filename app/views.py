@@ -5,13 +5,13 @@ from django.http import HttpResponse
 # Create your views here.
 
 def home(request):
-    ## get(coloumn_name=value)
-    # data0 = Student.objects.get(id=3) # get arguments always used primary-key coloumn
+    # get(coloumn_name=value)
+    data0 = Student.objects.get(id=3) # get arguments always used primary-key coloumn
     # data0 = Student.objects.get(stu_name="Neeraj Kumar")
     # data0 = Student.objects.get(stu_name="Arvind singh")
-    # print(data0)
-    # print(data0.id, data0.stu_name,data0.stu_city)
-    # return HttpResponse(data0)
+    print(data0)
+    print(data0.id, data0.stu_name,data0.stu_city)
+    return HttpResponse(data0)
     
     ## first()
     # data0 = Student.objects.first()
@@ -101,6 +101,27 @@ def home(request):
     # data = Student.objects.get(id=11).delete()
     # print(data)
 
+    # # filter().delete()
+    # data = Student.objects.filter(stu_name="Neeraj").delete()
+    # print(data)
+
+def about(request):
+    # get method 
+    var=Student.objects.get(id=3)
+
+    # last()
+    # var=Student.objects.last()
+
+    # first()
+    # var=Student.objects.first()
+
+    # reverse()
+    # var=Student.objects.reverse()
+
     # filter().delete()
-    data = Student.objects.filter(stu_name="Neeraj").delete()
-    print(data)
+    # var = Student.objects.filter(stu_name="Arvind singh").delete()
+
+    # filter().update()
+    # var = Student.objects.filter(id=10).update(stu_name="mehak",stu_email="ravi@gmail.com",stu_city='Mandala')
+    print(var)
+    return HttpResponse("BY MEHAK ")
